@@ -1,0 +1,408 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  color: white;
+  margin-bottom: 30px;
+}
+
+.header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.header p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+.dashboard {
+  display: grid;
+  grid-template-columns: 350px 1fr;
+  gap: 20px;
+  height: 80vh;
+}
+
+.sidebar {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+
+.widget {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #667eea;
+}
+
+.widget h3 {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1.1rem;
+}
+
+.traffic-status {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.9rem;
+}
+
+.status-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-dot.green {
+  background-color: #4caf50;
+}
+.status-dot.yellow {
+  background-color: #ff9800;
+}
+.status-dot.red {
+  background-color: #f44336;
+}
+
+.route-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.route-panel label {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.route-panel input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+}
+
+.route-panel input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+.route-panel button {
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}
+
+.route-panel button {
+  background: #667eea;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.route-panel button:hover {
+  background: #5a67d8;
+}
+
+#find-route-btn {
+  width: 100%;
+  padding: 12px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#find-route-btn:hover {
+  background: #5a67d8;
+}
+
+#route-result {
+  padding: 10px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  min-height: 40px;
+}
+
+.realtime-data p {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.realtime-data span {
+  font-weight: bold;
+  color: #667eea;
+}
+
+.map-container {
+  position: relative;
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+.map-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 1000;
+}
+
+.map-controls button {
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+}
+
+.map-controls button:hover {
+  background: white;
+  transform: translateY(-2px);
+}
+
+/* Traffic intensity colors */
+.traffic-light {
+  color: #4caf50;
+}
+.traffic-medium {
+  color: #ff9800;
+}
+.traffic-heavy {
+  color: #f44336;
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+  }
+
+  .sidebar {
+    height: auto;
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .dashboard {
+    height: 90vh;
+  }
+
+  .map-controls {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .map-controls button {
+    font-size: 0.7rem;
+    padding: 6px 8px;
+  }
+}
+
+/* Loading animation */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f3f3;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Popup styles */
+.leaflet-popup-content {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 0.9rem;
+}
+
+.popup-content h4 {
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.popup-content p {
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.traffic-level {
+  padding: 4px 8px;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+}
+
+/* Selected roads list */
+.selected-roads-list {
+  list-style: none;
+  margin: 10px 0;
+}
+
+.selected-roads-list li {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  background: #f8f9fa;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  border-left: 3px solid #667eea;
+}
+
+.road-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  background: #667eea;
+  color: white;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.road-name {
+  flex: 1;
+  font-weight: 500;
+}
+
+.road-type {
+  font-size: 0.8rem;
+  color: #666;
+  margin: 0 10px;
+}
+
+.selected-roads-list button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.8rem;
+  color: #f44336;
+}
+
+.route-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.route-actions button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+#calculate-route-btn {
+  background: #4caf50;
+  color: white;
+}
+
+#clear-route-btn {
+  background: #f44336;
+  color: white;
+}
+
+.route-summary {
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #3388ff;
+}
+
+.route-summary h4 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.route-summary p {
+  margin-bottom: 5px;
+  color: #555;
+}
+
+.route-option {
+  transition: transform 0.2s;
+}
+
+.route-option:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}

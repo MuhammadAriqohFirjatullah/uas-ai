@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Traffic Bengkulu - Prediksi Kemacetan</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🚦 Smart Traffic Bengkulu</h1>
+            <p>Sistem Prediksi Kemacetan Berbasis AI</p>
+        </header>
+
+        <div class="dashboard">
+            <div class="sidebar">
+                <div class="widget">
+                    <h3>📊 Status Lalu Lintas</h3>
+                    <div class="traffic-status">
+                        <div class="status-item">
+                            <span class="status-dot green"></span>
+                            <span>Lancar: <span id="smooth-count">0</span> ruas</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-dot yellow"></span>
+                            <span>Sedang: <span id="medium-count">0</span> ruas</span>
+                        </div>
+                        <div class="status-item">
+                            <span class="status-dot red"></span>
+                            <span>Macet: <span id="heavy-count">0</span> ruas</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <h3>🛣️ Rute Kustom</h3>
+                    <div class="route-panel">
+                        <label for="start-point">Titik Awal:</label>
+                        <input type="text" id="start-point" placeholder="Masukkan lokasi awal (contoh: Benteng Marlborough)">
+                        
+                        <label for="end-point">Titik Tujuan:</label>
+                        <input type="text" id="end-point" placeholder="Masukkan lokasi tujuan (contoh: Universitas Bengkulu)">
+                        
+                        <button id="find-route-btn">Cari Rute Terbaik</button>
+                        
+                        <div id="route-result"></div>
+                    </div>
+                </div>
+
+                <div class="widget">
+                    <h3>⚡ Data Real-time</h3>
+                    <div class="realtime-data">
+                        <p>Update terakhir: <span id="last-update"></span></p>
+                        <p>Kecepatan rata-rata: <span id="avg-speed">0</span> km/h</p>
+                        <p>Volume kendaraan: <span id="vehicle-count">0</span></p>
+                    </div>
+                </div>
+                
+                <div class="widget">
+                    <div id="road-statistics">
+                        <!-- Statistik jalan akan diisi oleh JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div id="map"></div>
+                <div class="map-controls">
+                    <button id="refresh-btn">🔄 Refresh Data</button>
+                    <button id="toggle-heatmap">🌡️ Heatmap</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet-heat@0.2.0/dist/leaflet-heat.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
