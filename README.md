@@ -1,12 +1,19 @@
-# 🧠 Sistem AI Prediksi Kemacetan Kota Bengkulu
+#  Sistem AI Prediksi Kemacetan Kota Bengkulu
 
-## 📍 Studi Kasus Smart City – Tugas UAS
+##  Studi Kasus Smart City – Tugas UAS
 
 Proyek ini merupakan implementasi sistem **prediksi kemacetan real-time** untuk Kota Bengkulu, sebagai bagian dari solusi Smart City. Sistem ini terdiri dari model kecerdasan buatan untuk klasifikasi lalu lintas, API backend, serta antarmuka web interaktif.
 
 ---
 
-## ✅ 1. Struktur Proyek
+##  Tim Pengembang
+
+* Lio Kusnata                 (G1A023013)
+* Muhammad Ariqoh Firjatullah (G1A023033)
+* Ajis Saputra Hidayah        (G1A023083)
+
+
+##  1. Struktur Proyek
 
 ```
 uas ai fix/
@@ -21,7 +28,7 @@ uas ai fix/
 
 ---
 
-## 🧠 2. Model AI yang Digunakan
+##  2. Model AI yang Digunakan
 
 * **Algoritma**: `RandomForestClassifier` (Scikit-learn)
 * **Alasan Pemilihan**:
@@ -61,7 +68,7 @@ uas ai fix/
 
 ---
 
-## 🔄 4. Desain Alur Kerja Sistem
+##  4. Desain Alur Kerja Sistem
 
 ### Narasi Teknis:
 
@@ -94,7 +101,7 @@ Sistem prediksi kemacetan ini berjalan melalui lima tahap utama yang saling teri
 
 ---
 
-## 📈 5. Evaluasi Model
+##  5. Evaluasi Model
 
 ### Strategi Evaluasi:
 
@@ -121,27 +128,27 @@ Sistem prediksi kemacetan ini berjalan melalui lima tahap utama yang saling teri
 
 ---
 
-## 🚀 6. Pengembangan Lanjutan
+##  6. Pengembangan Lanjutan
 
-### 🔗 Integrasi Data Real-Time:
+###  Integrasi Data Real-Time:
 
 * Sensor kendaraan dan CCTV
 * API cuaca BMKG
 * Data dari Google Maps/Waze (crowdsourcing)
 
-### 🧠 Model AI Tingkat Lanjut:
+###  Model AI Tingkat Lanjut:
 
 * **LSTM** untuk prediksi time-series
 * **Reinforcement Learning (RL)** untuk kontrol adaptif (misal: pengaturan lampu lalu lintas)
 * **Hybrid AI + Rule-based**: gabungkan logika lokal dan pembelajaran mesin
 
-### 📱 Fitur Tambahan:
+###  Fitur Tambahan:
 
 * Notifikasi berbasis lokasi GPS
 * Aplikasi mobile ringan
 * Pelaporan kemacetan dari pengguna (crowdsourcing)
 
-### 🛰️ Integrasi Smart City:
+###  Integrasi Smart City:
 
 * Dashboard Command Center
 * Deteksi anomali lalu lintas otomatis
@@ -149,7 +156,7 @@ Sistem prediksi kemacetan ini berjalan melalui lima tahap utama yang saling teri
 
 ---
 
-## 👥 Tim Pengembang
+##  Tim Pengembang
 
 * Lio Kusnata                 (G1A023013)
 * Muhammad Ariqoh Firjatullah (G1A023033)
