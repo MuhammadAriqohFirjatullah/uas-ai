@@ -155,13 +155,3 @@ Sistem prediksi kemacetan ini berjalan melalui lima tahap utama yang saling teri
 * Statistik lalu lintas untuk kebijakan dan perencanaan kota
 
 ---
-
-##  Tim Pengembang
-
-* Lio Kusnata                 (G1A023013)
-* Muhammad Ariqoh Firjatullah (G1A023033)
-* Ajis Saputra Hidayah        (G1A023083)
-
----
-
-> "Langkah kecil menuju kota cerdas yang bebas macet."
