@@ -41,7 +41,7 @@ uas ai fix/
 
 ---
 
-## 🧾 3. Jenis dan Sumber Data
+##  3. Jenis dan Sumber Data
 
 ### Jenis Data:
 
